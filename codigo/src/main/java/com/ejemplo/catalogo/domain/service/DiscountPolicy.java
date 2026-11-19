@@ -2,23 +2,24 @@ package com.ejemplo.catalogo.domain.service;
 
 /**
  * Servicio de dominio puro para las reglas de descuento y total (RN-1 y RN-2).
- * Aislado de Spring, JPA y de los adaptadores de entrada y salida.
- *
- * Configuración para Fila 3:
- * - Umbral de volumen u = 3 unidades
- * - Descuento base d = 12%
+ * Modificado para absorber el cambio de la Hoja 2 (Q1):
+ * - Si cantidad >= 3u (9 unidades), descuento = d + 5 = 17%.
+ * - Si 3u > cantidad >= u (3 a 8 unidades), descuento = d = 12%.
+ * - Si cantidad < u (< 3 unidades), sin descuento = 0%.
  */
 public class DiscountPolicy {
 
     public static final int UMBRAL_VOLUMEN = 3;
     public static final int DESCUENTO_BASE_PORCENTAJE = 12;
+    public static final int DESCUENTO_TRAMO_SUPERIOR_PORCENTAJE = 17; // d + 5 puntos porcentuales
 
     /**
-     * RN-1: Descuento por volumen.
-     * Si cantidad >= u (3), recibe 12% de descuento; si no, 0%.
+     * RN-1 actualizada con el tramo superior de Hoja 2.
      */
     public int calcularPorcentajeDescuento(int cantidad) {
-        if (cantidad >= UMBRAL_VOLUMEN) {
+        if (cantidad >= 3 * UMBRAL_VOLUMEN) {
+            return DESCUENTO_TRAMO_SUPERIOR_PORCENTAJE;
+        } else if (cantidad >= UMBRAL_VOLUMEN) {
             return DESCUENTO_BASE_PORCENTAJE;
         }
         return 0;

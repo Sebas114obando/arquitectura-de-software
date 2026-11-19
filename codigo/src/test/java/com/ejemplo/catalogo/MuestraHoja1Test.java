@@ -9,12 +9,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
 
 /**
  * Muestra oficial de la Hoja 1 para la Fila 3:
  * Monitor ($600.000), stock inicial 24, u = 3, d = 12%.
  */
 @SpringBootTest
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class MuestraHoja1Test {
 
     @Autowired
@@ -44,11 +46,11 @@ public class MuestraHoja1Test {
         assertEquals(PedidoEstado.RECHAZADO, p3.getEstado());
         assertEquals(0L, p3.getTotal());
 
-        // Línea 4: C-003, stock - 2u + 1 = 19
+        // Línea 4: C-003, stock - 2u + 1 = 19 (en Hoja 2 aplica tramo 17%: 9462000)
         Pedido p4 = crearPedidoUseCase.crearPedido("C-003", 1L, 19);
         System.out.println("PEDIDO " + p4.getId() + " " + p4.getEstado() + " total=" + p4.getTotal());
         assertEquals(4L, p4.getId());
         assertEquals(PedidoEstado.CONFIRMADO, p4.getEstado());
-        assertEquals(10032000L, p4.getTotal());
+        assertEquals(9462000L, p4.getTotal());
     }
 }
