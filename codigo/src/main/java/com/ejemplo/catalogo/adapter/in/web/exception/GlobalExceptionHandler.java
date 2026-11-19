@@ -1,6 +1,7 @@
 package com.ejemplo.catalogo.adapter.in.web.exception;
 
 import com.ejemplo.catalogo.domain.exception.ProductNotFoundException;
+import com.ejemplo.catalogo.domain.exception.ValidationException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,15 @@ public class GlobalExceptionHandler {
         ProblemDetail problem = ProblemDetail.forStatusAndDetail(
                 HttpStatus.NOT_FOUND, ex.getMessage());
         problem.setTitle("Producto no encontrado");
+        return problem;
+    }
+
+    // ValidationException -> 400 Bad Request
+    @ExceptionHandler(ValidationException.class)
+    public ProblemDetail handleBusinessValidation(ValidationException ex) {
+        ProblemDetail problem = ProblemDetail.forStatusAndDetail(
+                HttpStatus.BAD_REQUEST, ex.getMessage());
+        problem.setTitle("Error de validación de negocio");
         return problem;
     }
 

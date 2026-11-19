@@ -73,5 +73,16 @@ public class Product {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    public boolean hasSufficientStock(int requestedQuantity) {
+        return this.stock != null && this.stock >= requestedQuantity;
+    }
+
+    public void deductStock(int quantity) {
+        if (!hasSufficientStock(quantity)) {
+            throw new IllegalStateException("Stock insuficiente");
+        }
+        this.stock -= quantity;
+    }
 }
 

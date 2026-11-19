@@ -7,6 +7,14 @@ import java.util.List;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+/**
+ * Inicializador de datos para la variante Fila 3:
+ * Producto: Monitor
+ * Precio: $600.000
+ * Stock inicial: 24 unidades
+ * Umbral de volumen u: 3
+ * Descuento d: 12%
+ */
 @Component
 public class DataSeeder implements CommandLineRunner {
 
@@ -19,21 +27,12 @@ public class DataSeeder implements CommandLineRunner {
     @Override
     public void run(String... args) {
         if (repository.count() > 0) {
-            return; // data already exists: do not duplicate
+            return;
         }
 
         repository.saveAll(List.of(
-                new ProductJpaEntity("Laptop Pro 14", "Portátil de 14 pulgadas",
-                        new BigDecimal("1299.99"), 8, "electronica"),
-                new ProductJpaEntity("Mouse inalámbrico", "Bluetooth, 3 botones",
-                        new BigDecimal("24.90"), 40, "electronica"),
-                new ProductJpaEntity("Silla ergonómica", "Soporte lumbar",
-                        new BigDecimal("219.00"), 5, "hogar"),
-                new ProductJpaEntity("Lámpara LED", "Luz cálida regulable",
-                        new BigDecimal("35.50"), 18, "hogar"),
-                new ProductJpaEntity("Café de especialidad", "Bolsa de 500 g",
-                        new BigDecimal("14.75"), 60, "alimentos")
+                new ProductJpaEntity("Monitor", "Monitor de alta resolución",
+                        new BigDecimal("600000.00"), 24, "electronica")
         ));
     }
 }
-
