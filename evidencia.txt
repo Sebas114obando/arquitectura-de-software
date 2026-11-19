@@ -131,6 +131,7 @@ M	codigo/src/test/java/com/ejemplo/catalogo/domain/service/DiscountPolicyTest.ja
 ================================================================================
 6. GIT LOG (--FORMAT="%h %ad %an%d %s" --DATE=ISO)
 ================================================================================
-36dd31e 2026-11-18 23:37:44 -0500 Juan Sebastian Obando (HEAD -> main, tag: final) Absorber cambio de Hoja 2 (Q1): nuevo tramo de descuento comercial
+1cab258 2026-11-18 23:42:44 -0500 Cristina Buitrago (HEAD -> main) Documentacion final: ADR-0002, evidencia.txt, informe.md y LEEME.md
+36dd31e 2026-11-18 23:37:44 -0500 Juan Sebastian Obando (tag: final) Absorber cambio de Hoja 2 (Q1): nuevo tramo de descuento comercial
 d5c60f0 2026-11-18 23:34:23 -0500 Cristina Buitrago (tag: hoja-1) Implementacion Hoja 1: reglas de negocio RN-1 a RN-5, pruebas y ADR-0001
 cdb767d 2026-11-18 23:27:25 -0500 Juan Sebastian Obando Estructura inicial: arquitectura hexagonal catalogo
