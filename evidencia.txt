@@ -1,0 +1,136 @@
+================================================================================
+1. SALIDA DE LA REGLA DE ARQUITECTURA PASANDO
+================================================================================
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.ejemplo:catalogo >------------------------
+[INFO] Building catalogo 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ catalogo ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ catalogo ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 32 source files with javac [debug parameters release 25] to target\classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ catalogo ---
+[INFO] skip non existing resourceDirectory C:\Users\juans\OneDrive\Escritorio\proyecto-apellido1-apellido2\codigo\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ catalogo ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 8 source files with javac [debug parameters release 25] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ catalogo ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.ejemplo.catalogo.architecture.ArchitectureRuleTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.128 s -- in com.ejemplo.catalogo.architecture.ArchitectureRuleTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.490 s
+[INFO] Finished at: 2026-11-18T23:38:49-05:00
+[INFO] ------------------------------------------------------------------------
+
+================================================================================
+2. SALIDA DE LA REGLA CON VIOLACION INDUCIDA
+================================================================================
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.ejemplo:catalogo >------------------------
+[INFO] Building catalogo 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ catalogo ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ catalogo ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 32 source files with javac [debug parameters release 25] to target\classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ catalogo ---
+[INFO] skip non existing resourceDirectory C:\Users\juans\OneDrive\Escritorio\proyecto-apellido1-apellido2\codigo\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ catalogo ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 8 source files with javac [debug parameters release 25] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ catalogo ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.ejemplo.catalogo.architecture.ArchitectureRuleTest
+[VIOLACION ARQUITECTURA EN DOMAIN]:
+  Product.java:4 -> import org.springframework.stereotype.Component;
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.158 s <<< FAILURE! -- in com.ejemplo.catalogo.architecture.ArchitectureRuleTest
+[ERROR] com.ejemplo.catalogo.architecture.ArchitectureRuleTest.domainNoImportaSpringNiJakarta -- Time elapsed: 0.033 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+Violación de arquitectura en domain (no debe importar Spring ni Jakarta):
+Product.java:4 -> import org.springframework.stereotype.Component; ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:69)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:41)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:228)
+	at com.ejemplo.catalogo.architecture.ArchitectureRuleTest.domainNoImportaSpringNiJakarta(ArchitectureRuleTest.java:51)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   ArchitectureRuleTest.domainNoImportaSpringNiJakarta:51 Violación de arquitectura en domain (no debe importar Spring ni Jakarta):
+Product.java:4 -> import org.springframework.stereotype.Component; ==> expected: <true> but was: <false>
+[INFO] 
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.919 s
+[INFO] Finished at: 2026-11-18T23:39:20-05:00
+[INFO] ------------------------------------------------------------------------
+
+================================================================================
+3. SALIDA DE LA MUESTRA DE LA HOJA 1 (CORRIDA SOBRE HOJA-1)
+================================================================================
+PEDIDO 1 CONFIRMADO total=1200000
+PEDIDO 2 CONFIRMADO total=1584000
+PEDIDO 3 RECHAZADO total=0
+PEDIDO 4 CONFIRMADO total=10032000
+
+================================================================================
+4. SALIDA DE LA MUESTRA DE LA HOJA 2 (CORRIDA SOBRE FINAL)
+================================================================================
+PEDIDO 1 CONFIRMADO total=4482000
+PEDIDO 2 CONFIRMADO total=4224000
+PEDIDO 3 CONFIRMADO total=600000
+
+================================================================================
+5. GIT DIFF --NAME-STATUS HOJA-1 FINAL
+================================================================================
+M	codigo/src/main/java/com/ejemplo/catalogo/domain/service/DiscountPolicy.java
+M	codigo/src/test/java/com/ejemplo/catalogo/MuestraHoja1Test.java
+A	codigo/src/test/java/com/ejemplo/catalogo/MuestraHoja2Test.java
+M	codigo/src/test/java/com/ejemplo/catalogo/domain/service/DiscountPolicyTest.java
+
+================================================================================
+6. GIT LOG (--FORMAT="%h %ad %an%d %s" --DATE=ISO)
+================================================================================
+36dd31e 2026-11-18 23:37:44 -0500 Juan Sebastian Obando (HEAD -> main, tag: final) Absorber cambio de Hoja 2 (Q1): nuevo tramo de descuento comercial
+d5c60f0 2026-11-18 23:34:23 -0500 Cristina Buitrago (tag: hoja-1) Implementacion Hoja 1: reglas de negocio RN-1 a RN-5, pruebas y ADR-0001
+cdb767d 2026-11-18 23:27:25 -0500 Juan Sebastian Obando Estructura inicial: arquitectura hexagonal catalogo
