@@ -131,7 +131,9 @@ M	codigo/src/test/java/com/ejemplo/catalogo/domain/service/DiscountPolicyTest.ja
 ================================================================================
 6. GIT LOG (--FORMAT="%h %ad %an%d %s" --DATE=ISO)
 ================================================================================
-1cab258 2026-11-18 23:42:44 -0500 Cristina Buitrago (HEAD -> main) Documentacion final: ADR-0002, evidencia.txt, informe.md y LEEME.md
+1e0a3fe 2026-11-25 10:55:50 -0500 Juan Sebastian Obando (HEAD -> main) Corregir fechas de ADRs, regla de arquitectura, veredicto en ADR-0002 y soporte multiplataforma en LEEME.md
+dd56278 2026-11-18 23:43:18 -0500 Juan Sebastian Obando Actualizar seccion 6 de evidencia.txt con hash del log
+1cab258 2026-11-18 23:42:44 -0500 Cristina Buitrago Documentacion final: ADR-0002, evidencia.txt, informe.md y LEEME.md
 36dd31e 2026-11-18 23:37:44 -0500 Juan Sebastian Obando (tag: final) Absorber cambio de Hoja 2 (Q1): nuevo tramo de descuento comercial
 d5c60f0 2026-11-18 23:34:23 -0500 Cristina Buitrago (tag: hoja-1) Implementacion Hoja 1: reglas de negocio RN-1 a RN-5, pruebas y ADR-0001
 cdb767d 2026-11-18 23:27:25 -0500 Juan Sebastian Obando Estructura inicial: arquitectura hexagonal catalogo
