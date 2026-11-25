@@ -2,7 +2,7 @@
 
 Variante: Q1 / fila 3
 
-- Fecha: 2026-11-18 22:45
+- Fecha: 2026-11-18 23:45
 - Estado: aceptada
 
 ## Contexto
@@ -19,7 +19,7 @@ Se decidió implementar el nuevo tramo condicional exclusivamente dentro del ser
 **Se gana:** Alta modificabilidad y costo de cambio localizado. La regla de negocio se absorbió en una única clase de producción de dominio (`DiscountPolicy.java`), manteniendo los adaptadores web, JPA y casos de uso 100% aislados e inalterados.
 **Se pierde:** Se requirió actualizar las aserciones de `DiscountPolicyTest.java` y `MuestraHoja1Test.java` debido a que la línea 4 de la muestra (19 unidades) superaba el umbral de 9 y cambió su liquidación de $10.032.000 a $9.462.000.
 **Veredicto sobre lo que se perdería y sobre la predicción:**
-- Sobre lo que se perdería: Se confirmó la sobrecarga inicial de clases de indirección reportada en ADR-0001, pero su existencia protegió de forma absoluta a los adaptadores frente a la variación comercial.
+- Sobre lo que se perdería: La pérdida por sobrecarga ceremonial y clases de indirección advertida en el ADR-0001 no se manifestó en la absorción del cambio de la Hoja 2 (que resultó sumamente económica al tocar una sola clase), sino que se evidenció con total claridad durante la construcción inicial de la Hoja 1, donde estructurar una tienda para un único producto obligó a crear 23 archivos en el commit `d5c60f0` (puertos in/out, entidades JPA, adaptadores y mappers).
 - Sobre la predicción: Acertó plenamente en cada elemento pronosticado:
   1. Modificar la clase que calcula el total: Acertó (se modificó `DiscountPolicy.java`).
   2. No tocar la clase que registra el pedido: Acertó (`PedidoUseCaseService.java` quedó intacta).

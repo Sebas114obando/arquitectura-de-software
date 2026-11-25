@@ -2,6 +2,8 @@
 
 Variante: Q1 / fila 3
 
+> **Nota sobre el historial de Git:** El ADR-0001 fue redactado y consolidado junto con la implementación de la Hoja 1 dentro del commit `d5c60f0` (sobre el cual se fijó la etiqueta `hoja-1`). En concordancia con los principios de transparencia del ejercicio, se preserva el historial auténtico de Git sin reescrituras artificiales.
+
 ## Tabla de medición (git diff --name-status hoja-1 final)
 
 | Medida | Resultado |

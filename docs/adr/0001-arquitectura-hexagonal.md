@@ -2,7 +2,7 @@
 
 Variante: Q1 / fila 3
 
-- Fecha: 2026-11-18 20:30
+- Fecha: 2026-11-18 23:30
 - Estado: aceptada
 
 ## Contexto
@@ -15,6 +15,7 @@ La tienda comercializa un único producto, Monitor (fila 3: precio unitario $600
 
 ## Decisión
 Se decide implementar la **Arquitectura Hexagonal (Puertos y Adaptadores)** y adoptar **H2 en memoria** para la persistencia. La lógica de negocio y las reglas de descuento se confinan en el núcleo (`domain`), aisladas de frameworks externos (Spring Boot) y de tecnologías de infraestructura (JPA/Web) mediante puertos explícitos (`domain/port`) y adaptadores (`adapter`).
+Regla de arquitectura: Nada bajo `domain` importa `org.springframework` ni `jakarta`, y nada bajo `application` importa adaptadores (`adapter`).
 
 ## Consecuencias
 **Se gana:** Desacoplamiento total de la regla de descuento y cálculo de totales en `DiscountPolicy` (dominio puro), permitiendo modificar o añadir tramos comerciales con costo mínimo y sin tocar adaptadores web ni de base de datos. La verificación de reglas de dependencias es limpia y auditable (`ArchitectureRuleTest`). H2 en memoria proporciona arranques limpios reproducibles sin dependencias externas.

@@ -9,9 +9,16 @@
 ## Comando para correr la muestra de la Hoja 1
 Para ejecutar sobre la etiqueta `hoja-1` desde un arranque limpio:
 
+**Windows:**
 ```cmd
 cd codigo
 .\mvnw.cmd test -Dtest=MuestraHoja1Test -q
+```
+
+**Linux / macOS:**
+```bash
+cd codigo
+./mvnw test -Dtest=MuestraHoja1Test -q
 ```
 
 *(Líneas impresas: 4 pedidos con totales 1200000, 1584000, 0 y 10032000).*
@@ -21,9 +28,16 @@ cd codigo
 ## Comando para correr la muestra de la Hoja 2
 Para ejecutar sobre la etiqueta `final` desde un arranque limpio:
 
+**Windows:**
 ```cmd
 cd codigo
 .\mvnw.cmd test -Dtest=MuestraHoja2Test -q
+```
+
+**Linux / macOS:**
+```bash
+cd codigo
+./mvnw test -Dtest=MuestraHoja2Test -q
 ```
 
 *(Líneas impresas: 3 pedidos con totales 4482000, 4224000 y 600000).*
@@ -31,7 +45,15 @@ cd codigo
 ---
 
 ## Comando para verificar la regla de arquitectura
+
+**Windows:**
 ```cmd
 cd codigo
 .\mvnw.cmd test -Dtest=ArchitectureRuleTest -q
+```
+
+**Linux / macOS:**
+```bash
+cd codigo
+./mvnw test -Dtest=ArchitectureRuleTest -q
 ```
